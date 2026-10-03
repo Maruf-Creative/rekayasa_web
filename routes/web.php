@@ -33,8 +33,8 @@ use App\Http\Controllers\MahasiswaController;
 //         'Data Dosen');
 // });
 
-// Route::get('/mahasiswa',[MahasiswaController::class, 'index'])
-//     ->name('mahasiswa.index');
+Route::get('/mahasiswa',[MahasiswaController::class, 'index'])
+    ->name('mahasiswa.index');
 
 Route::get('/home', function () {
     return view ('Page.home');
@@ -46,4 +46,12 @@ Route::get('/profile', function () {
 
 Route::get('/about', function () {
     return view ('Page.about');
+});
+
+Route::get('/contact', function () {
+    return view ('Page.contact');
+});
+
+Route::get('/news', function () {
+    return view ('Page.news');
 });
