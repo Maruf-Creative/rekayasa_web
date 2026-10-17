@@ -1,12 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Route Controller</title>
-</head>
-<body>
-    <h1>Data Mahasiswa</h1>
-    <p>Selamat datang dipercobaan penggunaan route dan controller</p>
-</body>
-</html>
+@extends('layouts.main')
+@section('title', 'Data Mahasiswa')
+@section('content')
+<div>
+    <table>
+        <thead>
+            <tr>NIM</tr>
+            <tr>Nama</tr>
+            <tr>Jenis Kelamin</tr>
+            <tr>Prodi</tr>
+            <tr>No. Telpon</tr>
+            <tr>Alamat</tr>
+        </thead>
+        <tbody>
+            @foreach ($data as $item)
+            <tr>
+                <td>{{$item->nim}}</td>
+                <td>{{$item->nama}}</td>
+                <td>{{$item->jk}}</td>
+                <td>{{$item->prodi}}</td>
+                <td>{{$item->alamat}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+@endsection

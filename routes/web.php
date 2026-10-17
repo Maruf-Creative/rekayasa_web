@@ -36,6 +36,17 @@ use App\Http\Controllers\MahasiswaController;
 Route::get('/mahasiswa',[MahasiswaController::class, 'index'])
     ->name('mahasiswa.index');
 
+Route::get('/mahasiswa/{nama}', function ($nama){
+    return 'Nama Mahasiswa :' . $nama;
+});
+
+Route::get('/mahasiswadetail/{nim}/{nama}', function($nim, $nama){
+    return 'NIM = $nim <br> Nama Mahasiswa :$nama';
+});
+
+Route::get('edit_mahasiswa/{nim}', [MahasiswaController::class, 'edit'])
+    ->name('mahasiswa.edit');
+
 Route::get('/home', function () {
     return view ('Page.home');
 });

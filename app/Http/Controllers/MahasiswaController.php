@@ -14,4 +14,26 @@ class MahasiswaController extends Controller
         return view('mahasiswa.index', compact('data'));
     }
 
+
+    public function create (){
+
+    }
+
+    public function store (){
+
+    }
+
+    public function edit(){
+        $data  = Mahasiswa::where('nim', '251011700592')-get();
+        return view('mahasiswa.edit', compact('data'));
+    }
+
+    public function update (){
+
+    }
+
+    public function destroy (){
+        
+    }
+
 }
