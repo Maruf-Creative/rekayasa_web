@@ -1,9 +1,3 @@
-<header class="header">
-
-<!-- <div class="logo">
-    PT Teknologi Nusantara
-</div> -->
-
 <header>
         <div class="container">
             <div class="header-content">
@@ -13,6 +7,7 @@
                 <nav>
                     <ul>
                         <li><a href="{{ url('/home') }}">Home</a></li>
+                        <li><a href="{{ route('mahasiswa.index') }}">Mahasiswa</a></li>
                         <li><a href="{{ url('/profile') }}">Profile</a></li>
                         <li><a href="{{ url('/about') }}">About</a></li>
                         <li><a href="{{ url('/news') }}">News</a></li>

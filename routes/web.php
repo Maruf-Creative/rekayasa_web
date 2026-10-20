@@ -33,19 +33,20 @@ use App\Http\Controllers\MahasiswaController;
 //         'Data Dosen');
 // });
 
-Route::get('/mahasiswa',[MahasiswaController::class, 'index'])
-    ->name('mahasiswa.index');
+Route::get('/mahasiswa', [MahasiswaController::class, 'index'])->name('mahasiswa.index');
+Route::get('/mahasiswa/create', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
+Route::post('/mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
+Route::get('/mahasiswa/{nim}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
+Route::put('/mahasiswa/{nim}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
+Route::delete('/mahasiswa/{nim}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 
-Route::get('/mahasiswa/{nama}', function ($nama){
+Route::get('/edit_mahasiswa/{nim}', [MahasiswaController::class, 'edit']);
+Route::get('/mahasiswadetail/{nim}/{nama}', function($nim, $nama){
+    return "NIM = $nim <br> Nama Mahasiswa :$nama";
+});
+Route::get('/mahasiswa/nama/{nama}', function ($nama){
     return 'Nama Mahasiswa :' . $nama;
 });
-
-Route::get('/mahasiswadetail/{nim}/{nama}', function($nim, $nama){
-    return 'NIM = $nim <br> Nama Mahasiswa :$nama';
-});
-
-Route::get('edit_mahasiswa/{nim}', [MahasiswaController::class, 'edit'])
-    ->name('mahasiswa.edit');
 
 Route::get('/home', function () {
     return view ('Page.home');
